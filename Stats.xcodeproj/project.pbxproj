@@ -13,6 +13,7 @@
 		C385AD001D2D9BE000A090A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C385ACFE1D2D9BE000A090A4 /* Main.storyboard */; };
 		C385AD0B1D2D9BE000A090A4 /* StatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C385AD0A1D2D9BE000A090A4 /* StatsTests.swift */; };
 		C385AD161D2D9BE000A090A4 /* StatsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C385AD151D2D9BE000A090A4 /* StatsUITests.swift */; };
+		C385AD261D2D9E1800A090A4 /* smc.c in Sources */ = {isa = PBXBuildFile; fileRef = C385AD241D2D9E1800A090A4 /* smc.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,9 @@
 		C385AD111D2D9BE000A090A4 /* StatsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StatsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C385AD151D2D9BE000A090A4 /* StatsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsUITests.swift; sourceTree = "<group>"; };
 		C385AD171D2D9BE000A090A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C385AD231D2D9E1800A090A4 /* Stats-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Stats-Bridging-Header.h"; sourceTree = "<group>"; };
+		C385AD241D2D9E1800A090A4 /* smc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = smc.c; sourceTree = "<group>"; };
+		C385AD251D2D9E1800A090A4 /* smc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = smc.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,10 +100,13 @@
 			isa = PBXGroup;
 			children = (
 				C385ACF81D2D9BE000A090A4 /* AppDelegate.swift */,
+				C385AD241D2D9E1800A090A4 /* smc.c */,
+				C385AD251D2D9E1800A090A4 /* smc.h */,
 				C385ACFA1D2D9BE000A090A4 /* ViewController.swift */,
 				C385ACFC1D2D9BE000A090A4 /* Assets.xcassets */,
 				C385ACFE1D2D9BE000A090A4 /* Main.storyboard */,
 				C385AD011D2D9BE000A090A4 /* Info.plist */,
+				C385AD231D2D9E1800A090A4 /* Stats-Bridging-Header.h */,
 			);
 			path = Stats;
 			sourceTree = "<group>";
@@ -252,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C385AD261D2D9E1800A090A4 /* smc.c in Sources */,
 				C385ACFB1D2D9BE000A090A4 /* ViewController.swift in Sources */,
 				C385ACF91D2D9BE000A090A4 /* AppDelegate.swift in Sources */,
 			);
@@ -386,11 +394,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Stats/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Hoke.Stats;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Stats/Stats-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -398,11 +409,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Stats/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Hoke.Stats;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Stats/Stats-Bridging-Header.h";
 			};
 			name = Release;
 		};
