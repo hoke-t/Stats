@@ -16,13 +16,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
         dispatch_async(dispatch_get_global_queue(priority, 0)) { [unowned self] in
-            // do some task
             while true {
                 let temp = self.getCPUTemperature()
                 dispatch_async(dispatch_get_main_queue()) { [unowned self] in
-                    // update some UI
-                    self.statusItem.title = String(temp)
+                    // update the UI
+                    self.statusItem.title = "CPU: " + String(temp) + " °C"
                 }
+                // sleep so that we are not constantly polling the kernel
                 sleep(1)
             }
             
